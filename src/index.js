@@ -1,6 +1,5 @@
 require("dotenv").config({ path: "./.env" });
 const express = require("express");
-const path = require("path");
 require("./connect/mongoose");
 
 const StudentRouter = require("./Router/student");
