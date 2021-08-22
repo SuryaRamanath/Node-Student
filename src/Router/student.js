@@ -3,13 +3,13 @@ const Student = require("../model/student");
 const router = new express.Router();
 
 router.post("/api/create", async (req, res) => {
-  const { Name, Contact, Subjects, Class, Society, Year } = req.body;
+  const { Name, Contact, Subjects, Classes, Society, Year } = req.body;
   try {
     await Student.create({
       Name,
       Contact,
       Subjects,
-      Class,
+      Classes,
       Society,
       Year,
     });
@@ -20,12 +20,12 @@ router.post("/api/create", async (req, res) => {
 });
 
 router.post("/api/update/:id", async (req, res) => {
-  const { Name, Contact, Subjects, Class, Society, Year } = req.body;
+  const { Name, Contact, Subjects, Classes, Society, Year } = req.body;
 
   try {
     await Student.findOneAndUpdate(
       { _id: req.params.id },
-      { $set: { Name, Contact, Subjects, Class, Society, Year } }
+      { $set: { Name, Contact, Subjects, Classes, Society, Year } }
     );
     return res.json({ status: "ok" });
   } catch (e) {

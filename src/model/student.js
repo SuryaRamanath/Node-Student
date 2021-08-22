@@ -18,16 +18,20 @@ const StudentSchema = new mongoose.Schema(
         },
       },
     ],
-    Class: {
-      type: mongoose.Schema.Types.ObjectId,
-          refer:'society',
-          required: true
-    },
+    Classes: [
+      {
+        Class: {
+          type: mongoose.Schema.Types.ObjectId,
+          refer: "society",
+          required: true,
+        },
+      },
+    ],
     Society: [
       {
         society: {
           type: mongoose.Schema.Types.ObjectId,
-          refer:'society'
+          refer: "society",
         },
       },
     ],
