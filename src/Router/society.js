@@ -6,7 +6,7 @@ router.post("/api/create", async (req, res) => {
   const { society } = req.body;
   try {
     await Society.create({
-      society
+      society,
     });
     return res.json({ status: "ok" });
   } catch (e) {
@@ -16,16 +16,20 @@ router.post("/api/create", async (req, res) => {
 
 //adding student to society
 router.post("/api/society/add-student", async (req, res) => {
-  const { studentID, societyID} = req.body;
+  const { studentID, societyID } = req.body;
   try {
-    await Society.findOneAndUpdate({_id:societyID},{
-      $push:{
-        student:[{
-          student:studentID
-        }]
+    await Society.findOneAndUpdate(
+      { _id: societyID },
+      {
+        $push: {
+          student: [
+            {
+              student: studentID,
+            },
+          ],
+        },
       }
-        
-    });
+    );
     return res.json({ status: "ok" });
   } catch (e) {
     return res.json({ status: "error", error: e });

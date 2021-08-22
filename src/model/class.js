@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const classSchema = new mongoose.Schema(
   {
-   
     Class: {
       type: String,
       required: true,
@@ -11,7 +10,7 @@ const classSchema = new mongoose.Schema(
       {
         society: {
           type: mongoose.Schema.Types.ObjectId,
-          refer:'society'
+          refer: "society",
         },
       },
     ],
@@ -19,11 +18,10 @@ const classSchema = new mongoose.Schema(
       {
         student: {
           type: mongoose.Schema.Types.ObjectId,
-          refer:'student'
+          refer: "student",
         },
       },
     ],
- 
   },
   { collection: "class", timestamp: true }
 );

@@ -4,8 +4,8 @@ const path = require("path");
 require("./connect/mongoose");
 
 const StudentRouter = require("./Router/student");
-const classRouter = require('./Router/class')
-const societyRouter = require('./Router/society')
+const classRouter = require("./Router/class");
+const societyRouter = require("./Router/society");
 
 const app = express();
 app.use(express.json());

@@ -2,15 +2,14 @@ const mongoose = require("mongoose");
 
 const societySchema = new mongoose.Schema(
   {
-
     society: {
-      type: String
+      type: String,
     },
     student: [
       {
         student: {
           type: mongoose.Schema.Types.ObjectId,
-          refer:'student'
+          refer: "student",
         },
       },
     ],
